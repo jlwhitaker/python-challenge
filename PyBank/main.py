@@ -1,7 +1,7 @@
 #Dependencies
 import os
 import csv
-from typing import Counter
+from pathlib import Path
 
 #File location
 csvpath = os.path.join('Resources', 'budget_data.csv')
@@ -53,4 +53,17 @@ with open(csvpath, newline='') as csvfile:
     #Find the greatest decrease in profits (date and amount) over the entire period
     Decrease = min(total_profits_change)
     print("Greatest Decrease in Profits: ", Decrease)
+
+#Output File to Text File
+output_file = Path('Resources','Financial_Analysis.txt')
+
+with open(output_file,"w") as file: 
+
+    #Write results to be saved to financial analysis txt file
+    file.write(f"Election Results")
+    file.write(f"---------------------------")
+    file.write(f"Total:  {profits}")
+    file.write(f"Average Change:  {Average_change}")
+    file.write(f"Greatest Increase in Profits:  {Max_increase}")
+    file.write(f"Greatest Decrease in Profits: {Decrease}")
     
