@@ -60,10 +60,9 @@ output_file = Path('Resources','Financial_Analysis.txt')
 with open(output_file,"w") as file: 
 
     #Write results to be saved to financial analysis txt file
-    file.write(f"Election Results")
+    file.write(f"Financial Analysis")
     file.write(f"---------------------------")
     file.write(f"Total:  {profits}")
     file.write(f"Average Change:  {Average_change}")
     file.write(f"Greatest Increase in Profits:  {Max_increase}")
     file.write(f"Greatest Decrease in Profits: {Decrease}")
-    

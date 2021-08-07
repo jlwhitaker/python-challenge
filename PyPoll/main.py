@@ -1,7 +1,7 @@
 #Dependencies
 import os
 import csv
-from typing import Counter
+from pathlib import Path
 
 #File location
 csvpath = os.path.join('Resources', 'election_data.csv')
@@ -73,5 +73,19 @@ with open(csvpath, newline='') as csvfile:
 
     print("Winner: ", Winner)
 
-    
+#Output File to Text File
+output_file = Path('Resources','Poll_Analysis.txt')
+
+with open(output_file,"w") as file: 
+
+    #Write results to be saved to financial analysis txt file
+    file.write(f"Election Results")
+    file.write(f"---------------------------")
+    file.write(f"Total Votes:  {votes}")
+    file.write(f"Khan:  {Khan_Percentage}, {Khan_votes}")
+    file.write(f"Correy:  {Correy_Percentage}, {Correy_votes}")
+    file.write(f"Li: {Li_Percentage}, {Li_votes} ")
+    file.write(f"OTooley:  {OTooley_Percentage}, {OTooley_votes} ")
+    file.write(f"Winner: {Winner}")
+
 
